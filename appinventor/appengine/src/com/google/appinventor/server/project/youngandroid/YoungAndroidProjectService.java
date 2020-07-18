@@ -842,8 +842,9 @@ public final class YoungAndroidProjectService extends CommonProjectService {
         return appengineHost.get();
       }
     } else {
-      // TODO(user): Figure out how to make this more generic
-      return "localhost:8888";
+      // This reads the setting, <property name="appengine.host" value="localhost:8888" />, from appengine-web.xml
+      // No longer hard-coded the DevServer port number here in the code!
+      return appengineHost.get();
     }
   }
 
